@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>住宿指南 - SIOC生活指南</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+        }
+        .accommodation-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .dorm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .dorm-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .dorm-card:hover {
+            transform: translateY(-5px);
+        }
+        .image-gallery {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        .gallery-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .gallery-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .gallery-dot.active {
+            background-color: white;
+        }
+        .no-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-size: 1.1em;
+            text-align: center;
+            padding: 20px;
+        }
+        .dorm-info {
+            padding: 1.5rem;
+        }
+        .dorm-title {
+            font-size: 1.4rem;
+            margin: 0 0 1rem 0;
+            color: #2c3e50;
+        }
+        .dorm-details {
+            margin: 0;
+            color: #666;
+        }
+        .info-section {
+            margin-top: 1rem;
+        }
+        .info-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        .info-content {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>住宿指南</h1>
+        <a href="../index.html" class="back-link">返回首页</a>
+    </header>
+
+    <main class="container">
+        <section class="accommodation-section">
+            <h2 class="section-title">宿舍概览</h2>
+            <div class="accommodation-section">
+                <h3 class="section-title">所里宿舍</h3>
+                <div class="dorm-grid">
+                    <div class="dorm-card" onclick="location.href='#inside-a'">
+                        <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+                        <div class="dorm-info">
+                            <h3 class="dorm-title">所公寓</h3>
+                            <p class="dorm-details">独立卫浴，提供双人间、三人间和四人间</p>
+                        </div>
+                    </div>
+                    <div class="dorm-card" onclick="location.href='#inside-b'">
+                        <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="../pic/四号楼/四号楼四人间.jpg" alt="四号楼四人间" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+                        <div class="dorm-info">
+                            <h3 class="dorm-title">四号楼</h3>
+                            <p class="dorm-details">公共卫浴，提供四人间和六人间</p>
+                        </div>
+                    </div>
+                    <div class="dorm-card" onclick="location.href='#inside-c'">
+                        <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+                        <div class="dorm-info">
+                            <h3 class="dorm-title">六号楼</h3>
+                            <p class="dorm-details">公共卫浴，一楼六人间，其余三人间</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accommodation-section">
+                <h3 class="section-title">所外宿舍</h3>
+                <div class="dorm-grid">
+                    <div class="dorm-card" onclick="location.href='#outside-d'">
+                        <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+                        <div class="dorm-info">
+                            <h3 class="dorm-title">肇嘉浜路（研一）</h3>
+                            <p class="dorm-details">公共卫浴，提供两人/四人/六人间</p>
+                        </div>
+                    </div>
+                    <div class="dorm-card" onclick="location.href='#outside-e'">
+                        <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+                        <div class="dorm-info">
+                            <h3 class="dorm-title">东安路（职工/联培）</h3>
+                            <p class="dorm-details">公共卫浴，四人间上床下桌</p>
+                        </div>
+                    </div>
+                    <div class="dorm-card" onclick="location.href='#outside-f'">
+                        <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+                        <div class="dorm-info">
+                            <h3 class="dorm-title">双峰路（联培）</h3>
+                            <p class="dorm-details">独立卫浴，六人间</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 所里宿舍区域 -->
+        <section id="inside-a" class="accommodation-section">
+            <h2 class="section-title">所公寓</h2>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">位置信息</div>
+                <div class="info-content">徐汇区零陵路357号，快递可填上海市徐汇区零陵路357号中国科学院上海有机化学研究所-客座人员公寓</div>
+                
+                <div class="info-title">房费信息</div>
+                <div class="info-content">150元/月（部分房费可能低于150元）</div>
+                
+                <div class="info-title">水电费缴纳</div>
+                <div class="info-content">需缴纳水电费，与房费一起每三个月缴纳一次</div>
+                
+                <div class="info-title">设施配置</div>
+                <div class="info-content">独立卫浴（费用含在水电费）；房间类型包括双人间（落地床）、三人间（落地床）、四人间（上床下桌），床铺大小为0.8~1.0m×2m</div>
+
+                <div class="info-title">其他信息</div>
+                <div class="info-content">无公共洗衣机/烘干机，需宿舍自行购买，也可关注有机所二手交易群：855876685</div>
+            </div>
+        </section>
+
+        <section id="inside-b" class="accommodation-section">
+            <h2 class="section-title">四号楼（联培/研二）</h2>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="../pic/四号楼/四号楼四人间.jpg" alt="四号楼四人间" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">位置信息</div>
+                <div class="info-content">徐汇区零陵路345号（同有机所地址），快递可填上海市徐汇区零陵路357号中国科学院上海有机化学研究所-客座人员公寓</div>
+                
+                <div class="info-title">房费信息</div>
+                <div class="info-content">150元/月</div>
+                
+                <div class="info-title">水电费缴纳</div>
+                <div class="info-content">无水费，需缴纳电费，与房费一起每三个月缴纳一次</div>
+                
+                <div class="info-title">设施配置</div>
+                <div class="info-content">公共卫浴（每层楼都有澡堂且有隔间）（无费用）；所里学生：四人间上床下桌；联培/毕设：六人间上下床（实际可能住不满，为三人间），床铺大小为0.8~0.9m×2m</div>
+
+                <div class="info-title">其他信息</div>
+                <div class="info-content">每层楼有公共洗衣机x2+烘干机x1，洗衣价格3r/次，烘干0.03r/次</div>
+            </div>
+        </section>
+
+        <section id="inside-c" class="accommodation-section">
+            <h2 class="section-title">六号楼（联培/研二男生）</h2>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">位置信息</div>
+                <div class="info-content">徐汇区零陵路345号（同有机所地址），快递可填上海市徐汇区零陵路357号中国科学院上海有机化学研究所-客座人员公寓</div>
+                
+                <div class="info-title">房费信息</div>
+                <div class="info-content">150元/月</div>
+                
+                <div class="info-title">水电费缴纳</div>
+                <div class="info-content">无水费，需缴纳电费，与房费一起每三个月缴纳一次</div>
+                
+                <div class="info-title">设施配置</div>
+                <div class="info-content">公共卫浴（每层楼都有澡堂且有隔间）（无费用）；一楼为六人间上下铺，其余楼层为三人间上床下桌，床铺大小为0.8~0.9m×2m</div>
+
+                <div class="info-title">其他信息</div>
+                <div class="info-content">每层楼有公共洗衣机x2+烘干机x1，洗衣价格3r/次，烘干0.03r/次</div>
+            </div>
+        </section>
+
+        <!-- 所外宿舍区域 -->
+        <section id="outside-d" class="accommodation-section">
+            <h2 class="section-title">肇嘉浜路（研一）</h2>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">位置信息</div>
+                <div class="info-content">徐汇区肇家浜路407号，快递可填上海市徐汇区肇家浜路407号中国科学院上海分院研究生公寓</div>
+                
+                <div class="info-title">房费信息</div>
+                <div class="info-content">南面四人间260元/月，北面两人间220元/月</div>
+                
+                <div class="info-title">水电费缴纳</div>
+                <div class="info-content">没有水费，电费一个月一缴费</div>
+                
+                <div class="info-title">设施配置</div>
+                <div class="info-content">公共卫浴（每层楼都有澡堂且有隔间）（费用：0.3元/分钟）；有两人/四人/六人间（落地床），床铺大小为0.8~1.0m×2m</div>
+
+                <div class="info-title">其他信息</div>
+                <div class="info-content">每层楼有公共洗衣机x2，每两层烘干机x1，洗衣价格3-5r/次，烘干3-5r/次</div>
+            </div>
+        </section>
+
+        <section id="outside-e" class="accommodation-section">
+            <h2 class="section-title">东安路（职工/联培）</h2>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">位置信息</div>
+                <div class="info-content">徐汇区东安路230弄1号楼，快递可填上海市徐汇区东安路230弄1号楼</div>
+                
+                <div class="info-title">房费信息</div>
+                <div class="info-content">150元/月（有机所学生）200元/月（职工）240元/月（联培学生）</div>
+                
+                <div class="info-title">水电费缴纳</div>
+                <div class="info-content">无水费，需缴纳电费，一个月一缴</div>
+                
+                <div class="info-title">设施配置</div>
+                <div class="info-content">公共卫浴（每层楼都有澡堂且有隔间）（费用：0.3元/分钟）；所里学生：四人间上床下桌，床铺大小为0.9~1.0m×2m</div>
+
+                <div class="info-title">其他信息</div>
+                <div class="info-content">每层楼有公共洗衣机x2+烘干机x2，男女分开，洗衣价格3-5r/次，烘干3-5r/次</div>
+            </div>
+        </section>
+
+        <section id="outside-f" class="accommodation-section">
+            <h2 class="section-title">双峰路（联培）</h2>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="no-image-placeholder">暂无照片</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">位置信息</div>
+                <div class="info-content">徐汇区枫林路街道双峰路300号（双峰路菜市场楼上）三楼和四楼，快递可填上海市徐汇区双峰路300号</div>
+                
+                <div class="info-title">房费信息</div>
+                <div class="info-content">240元/月（联培学生）</div>
+                
+                <div class="info-title">水电费缴纳</div>
+                <div class="info-content">无水电费（可能会有变动）</div>
+                
+                <div class="info-title">设施配置</div>
+                <div class="info-content">独立卫浴；六人间，床铺大小为1.2m×2m</div>
+
+                <div class="info-title">其他信息</div>
+                <div class="info-content">每层楼有公共洗衣机x2+烘干机x2，洗衣烘干免费</div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新已有照片的显示
+            const updateExistingImages = () => {
+                const galleries = document.querySelectorAll('.image-gallery');
+                galleries.forEach(gallery => {
+                    const container = gallery.querySelector('.gallery-container');
+                    const items = container.querySelectorAll('.gallery-item');
+                    
+                    // 检查是否有多张照片
+                    if (items.length > 1) {
+                        let currentIndex = 0;
+                        const dots = gallery.querySelectorAll('.gallery-dot');
+                        
+                        // 自动轮播
+                        setInterval(() => {
+                            currentIndex = (currentIndex + 1) % items.length;
+                            container.style.transform = `translateX(-${currentIndex * 100}%)`;
+                            dots.forEach((dot, index) => {
+                                dot.classList.toggle('active', index === currentIndex);
+                            });
+                        }, 5000);
+
+                        // 点击切换
+                        dots.forEach((dot, index) => {
+                            dot.addEventListener('click', () => {
+                                currentIndex = index;
+                                container.style.transform = `translateX(-${currentIndex * 100}%)`;
+                                dots.forEach((d, i) => {
+                                    d.classList.toggle('active', i === index);
+                                });
+                            });
+                        });
+                    }
+                });
+            };
+
+            // 初始化照片显示
+            updateExistingImages();
+        });
+    </script>
+</body>
+</html>
