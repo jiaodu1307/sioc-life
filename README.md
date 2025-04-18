@@ -13,13 +13,13 @@
 ## 如何访问
 
 网站已部署在GitHub Pages上，您可以通过以下链接访问：
-[SIOC生活指南](https://[username].github.io/sioc-life/)
+[SIOC生活指南](https://jiaodu1307.github.io/sioc-life/)
 
 ## 本地开发
 
 1. 克隆仓库：
 ```bash
-git clone https://github.com/[username]/sioc-life.git
+git clone https://github.com/jiaodu1307/sioc-life.git
 ```
 
 2. 使用任意HTTP服务器运行网站，例如使用Python：
