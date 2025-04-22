@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐饮攻略 - SIOC生活指南</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Added padding */
+            max-width: 1200px; /* Ensure content aligns with main container */
+            margin: 0 auto; /* Center the header content */
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+        }
+        .food-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            .food-section p {
+                font-size: 1rem; /* Added rule for paragraph font size */
+                color: #333; /* Ensure consistent paragraph color */
+                margin-bottom: 0.8rem; /* Add some spacing below paragraphs */
+            }
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .content-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content-list li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .item-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem; /* 增大字体 */
+        }
+        .item-description {
+            color: #666;
+            font-size: 1rem; /* Increased from 0.9rem */
+        }
+        .tips {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← 返回首页</a>
+            <h1>餐饮攻略</h1>
+            <div></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tips">
+            <strong>温馨提示：</strong>本攻略定期更新，欢迎同学们补充和分享更多美食信息。
+        </div>
+
+        <section class="food-section">
+            <h2 class="section-title">所内就餐</h2>
+            <p style="font-size: 1.1rem;">有机所内有三个食堂，分别为七号楼二楼，七号楼三楼，植生所。以上食堂均可刷有机所饭卡（若没带饭卡也可以使用有机所饭卡的一卡通微信小程序，刷饭卡的机子有扫二维码）。</p>
+            <div class="content-list">
+                <li>
+                    <div class="item-title">七号楼二楼食堂</div>
+                    <div class="item-description">
+                        <p>- 一半窗口是自选菜品（味道一般）</p>
+                        <p>- 一个窗口是西北面食（主要是面条/拉面，可选多种粗细）</p>
+                        <p>- 一个窗口是拌饭/汤锅</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-title">七号楼三楼食堂</div>
+                    <div class="item-description">
+                        <p>- 一个面条窗口（诸暨的次坞打面）</p>
+                        <p>- 一个烧腊窗口</p>
+                        <p>- 一个麻辣烫窗口</p>
+                        <p>- 一个砂锅窗口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-title">植生所食堂</div>
+                    <div class="item-description">
+                        <p>- 大部分是自选窗口</p>
+                        <p>- 还有一个面条窗口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-title">七号楼一楼咖啡吧</div>
+                    <div class="item-description">
+                        <p>- 有饮料和一些面包/零食，类似小卖部（不过种类不多）。</p>
+                        <p>- 位置较隐蔽，可从七号楼正门左边小道进去或停车场入口左边小道进入。</p>
+                        <p>- 支持刷饭卡。</p>
+                    </div>
+                </li>
+            </div>
+        </section>
+
+        <section class="food-section">
+            <h2 class="section-title">所外吃饭</h2>
+            <div class="content-list">
+                <li>
+                    <div class="item-title">周边美食</div>
+                    <div class="item-description">
+                        <p>- <strong>麦当劳:</strong> 最近的在斜土路（植生所门口出门左拐，第一个路口右拐即到）。</p>
+                        <p>- <strong>肯德基:</strong> 最近的在东安路站台层。</p>
+                        <p>- <strong>好再来:</strong> 距离很近，有机所门口出门左转第一个路口去马路斜对面；偏家常菜，味道不错，人均价格比食堂略贵，但在上海还好。</p>
+                        <p>- <strong>达美乐:</strong> 大木桥路有一家（有机所门口出门左转经过三个路口再左转，也可搜索地图）。</p>
+                        <p>- <strong>福建千里香馄饨面:</strong> 小馄饨9r-12r（有机所门口出门左转过一个路口右手侧红色招牌）。</p>
+                        <p>- <strong>窄巷口生烫牛肉米线馄饨:</strong> 千里香馄饨附近。</p>
+                        <p>- <strong>萨莉亚:</strong> 位于正大乐城。</p>
+                        <p>- <strong>农小锅:</strong> 位于绿地缤纷城。</p>
+                        <p>- <strong>小娃头地锅鸡:</strong> 位于天钥桥路。</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-title">商场餐厅</div>
+                    <div class="item-description">
+                        <p>- 距有机所一个路口距离内有多个商场，如<strong>正大乐城</strong>、<strong>绿地缤纷城</strong>等。</p>
+                        <p>- 这些商场内有较多餐厅可供选择。</p>
+                    </div>
+                </li>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+</html>

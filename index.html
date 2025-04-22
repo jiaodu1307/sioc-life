@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIOC生活指南</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .main-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .section-content {
+            color: #666;
+        }
+        .section-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section-list li {
+            margin-bottom: 0.5rem;
+        }
+        .section-list a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .section-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="main-title">SIOC生活指南</h1>
+            <p class="subtitle">为上海有机所研究生提供的不全面的学习和生活指南（学习资料板块暂只有课程资料）</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-grid">
+            <div class="section-card">
+                <h2 class="section-title">学习资料</h2>
+                <div class="section-content">
+                    <p>包含专业课程、实验技能等学术资源</p>
+                    <ul class="section-list">
+                        <li><a href="./study/courses.html">专业课程资料</a></li>
+                        <li><a href="#">待添加板块</a></li>
+                        <li><a href="#">待添加板块</a></li>
+                        <li><a href="#">待添加板块</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title">生活资料</h2>
+                <div class="section-content">
+                    <p>涵盖衣食住行等日常生活信息</p>
+                    <ul class="section-list">
+                        <li><a href="./life/entertainment.html">休闲运动</a></li>
+                        <li><a href="./life/accommodation.html">住宿指南</a></li>
+                        <li><a href="./life/food.html">餐饮攻略</a></li>
+                        <li><a href="./life/transportation.html">交通出行</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-card">
+                <h2 class="section-title">相关链接</h2>
+                <div class="section-content">
+                    <p>常用网站和微信公众号</p>
+                    <ul class="section-list">
+                        <li><a href="http://www.sioc.cas.cn/" target="_blank">上海有机所官网</a></li>
+                        <li><a href="https://sioc.cas.cn/yjsb/" target="_blank">有机所研究生部</a></li>
+                        <li><a href="https://mail.cstnet.cn/" target="_blank">中国科学院邮件系统</a></li>
+                        <li><a href="http://eip.sioc.ac.cn/wps/portal/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIj8nKt8jNTrMoLivV88tMz8_QLsh0VAZSk7Xs!/" target="_blank">SIOC信息门户（采购/波谱）需SIOC网络</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container" style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+        <div class="qr-code-section">
+            <h3 style="color: #2c3e50; margin-bottom: 1rem;">欢迎关注</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2rem;">
+                <div>
+                    <img src="pic/contact/sioc-yjsh.jpg" alt="研究生会微信公众号二维码" style="width: 150px; height: 150px; display: block; margin: 0 auto 0.5rem;">
+                    <p style="font-size: 0.9rem; color: #666;">研究生会微信公众号</p>
+                </div>
+                <!-- 如果有其他二维码可以放在这里 -->
+                <div>
+                    <img src="pic/contact/xhs2.png" alt="小红书二维码" style="width: 150px; height: 150px; display: block; margin: 0 auto 0.5rem;">
+                    <p style="font-size: 0.9rem; color: #666;">作者小红书账号</p>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 1rem; font-weight: bold; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
+            本网站受限于本人经验，在不同板块都不可避免可能出现错误；此外，如有内容补充或其他想法，也非常欢迎联系我的邮箱/小红书进行反馈，邮箱为:hantaolin23@mails.ucas.ac.cn。<br>
+            （后续计划可能会增加内容以扩大指南适用范围:增加针对保研/考研/考博同学的内容）
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; color: #999;">© 2024 SIOC生活指南</p>
+    </footer>
+</body>
+</html>
