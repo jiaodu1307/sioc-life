@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>有机所猫猫图鉴 - SIOC生活指南</title>
+    <title>猫猫图鉴 - SIOC生活指南</title>
     <style>
         /* 复用 courses.html 或其他页面的基础样式 */
         body {
@@ -58,8 +58,8 @@
         }
         .cat-grid {
             display: grid;
-            /* 根据需要调整列数和最小宽度 */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* 修改这里：固定为三列 */
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
         .cat-card {
@@ -108,13 +108,35 @@
             font-size: 0.9rem;
             color: #999;
         }
+
+        /* 页面小宠物样式 */
+        .page-pet {
+            position: fixed; /* 固定在屏幕上 */
+            bottom: 20px;    /* 距离底部 20px */
+            right: 20px;     /* 距离右侧 20px */
+            font-size: 3rem; /* 图标大小 */
+            z-index: 1000;   /* 确保在顶层 */
+            animation: sway 2s ease-in-out infinite; /* 应用摇摆动画 */
+            cursor: default; /* 鼠标样式 */
+        }
+
+        /* 定义摇摆动画 */
+        @keyframes sway {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-10px) rotate(-5deg); /* 向左移动并轻微旋转 */
+            }
+        }
+
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="../index.html" class="back-link">← 返回首页</a>
-            <h1>有机所猫猫图鉴</h1>
+            <h1>猫猫图鉴</h1>
             <div></div> <!-- 用于对齐标题 -->
         </div>
     </header>
@@ -123,31 +145,73 @@
         <section class="cat-section">
             <h2 class="section-title">园区常驻猫猫</h2>
             <div class="cat-grid">
-                <!-- 猫猫卡片示例 1 -->
+                <!-- 猫猫卡片 1: 希希 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <!-- 替换为猫猫图片路径 -->
-                        <img src="../pic/cats/cat1_placeholder.jpg" alt="猫猫名字1">
+                        <!-- 替换为希希的图片路径 -->
+                        <img src="../pic/cats/主页/希希0.jpg" alt="希希">
                     </div>
                     <div class="cat-info">
-                        <h3 class="cat-name">猫猫名字 1</h3>
-                        <p class="cat-description">关于这只猫猫的描述，例如它的外貌特征、性格、经常出没的地点等。</p>
+                        <h3 class="cat-name">希希</h3>
+                        <p class="cat-description">
+                            <strong>别称：</strong>女明星，八嘎<br>
+                            <strong>性别：</strong>妹妹<br>
+                            <strong>年龄：</strong>约1岁<br>
+                            <strong>毛色：</strong>狸白<br>
+                            <strong>特征：</strong>衔蝉，有刘海，背部及腿部有狸花花纹<br>
+                            <strong>性格：</strong>机智亲人，需要独宠<br>
+                            <strong>绝育：</strong>已绝育<br>
+                            <strong>关系：</strong>敌视所有猫，但打不过<br>
+                            <strong>状态：</strong>流浪
+                        </p>
                     </div>
                 </div>
 
-                <!-- 猫猫卡片示例 2 -->
+                <!-- 猫猫卡片 2: 菀菀 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                         <!-- 替换为猫猫图片路径 -->
-                        <img src="../pic/cats/cat2_placeholder.jpg" alt="猫猫名字2">
+                         <!-- 替换为菀菀的图片路径 -->
+                        <img src="../pic/cats/主页/菀菀0.jpg" alt="菀菀">
                     </div>
                     <div class="cat-info">
-                        <h3 class="cat-name">猫猫名字 2</h3>
-                        <p class="cat-description">关于这只猫猫的描述...</p>
+                        <h3 class="cat-name">菀菀</h3>
+                        <p class="cat-description">
+                            <strong>别称：</strong>无<br>
+                            <strong>性别：</strong>妹妹<br>
+                            <strong>年龄：</strong>约1岁<br>
+                            <strong>毛色：</strong>狸白<br>
+                            <strong>特征：</strong>嘴部少许花纹，有刘海，背部、腿和脚上均有狸花花纹<br>
+                            <strong>性格：</strong>软糯亲人，胆子大<br>
+                            <strong>绝育：</strong>已绝育<br>
+                            <strong>关系：</strong>人类是好朋友，目前无猫关系<br>
+                            <strong>状态：</strong>流浪
+                        </p>
                     </div>
                 </div>
 
-                <!-- 可以继续添加更多猫猫卡片 -->
+                <!-- 猫猫卡片 3: 蛋大 -->
+                 <div class="cat-card">
+                    <div class="cat-image">
+                         <!-- 替换为蛋大的图片路径 -->
+                        <img src="../pic/cats/主页/蛋大0.jpg" alt="蛋大">
+                    </div>
+                    <div class="cat-info">
+                        <h3 class="cat-name">蛋大</h3>
+                         <p class="cat-description">
+                            <strong>别称：</strong>无<br>
+                            <strong>性别：</strong>弟弟<br>
+                            <strong>年龄：</strong>约1岁<br>
+                            <strong>毛色：</strong>狸白<br>
+                            <strong>特征：</strong>带有梨花面具，背部和尾巴覆盖狸花，很肥~<br>
+                            <strong>性格：</strong>亲人，爱管闲事<br>
+                            <strong>绝育：</strong>已绝育<br>
+                            <strong>关系：</strong>小老鼠和异瞳的大哥，疑似齐刘海的孩子，母子决裂<br>
+                            <strong>状态：</strong>流浪
+                        </p>
+                    </div>
+                </div>
+
+                 <!-- 待添加卡片 -->
                  <div class="cat-card">
                     <div class="cat-image">
                          <!-- 替换为猫猫图片路径 -->
@@ -168,7 +232,9 @@
             <ul>
                 <li>请勿随意投喂人类食物，可能对猫猫健康有害。</li>
                 <li>观察即可，请勿强行撸猫或追逐，尊重猫猫意愿。</li>
-                <li>如发现受伤或状态异常的猫猫，可联系相关人员。</li>
+                <li>如发现受伤或状态异常的猫猫，可联系园区猫猫群。
+                    <!-- 二维码图片已移除 -->
+                </li>
             </ul>
         </section>
     </main>
@@ -176,6 +242,13 @@
     <footer>
         <p>© 2024 SIOC生活指南 - 猫猫图鉴</p>
     </footer>
+
+    <!-- 页面小宠物元素 -->
+    <div class="page-pet">🐾</div>
+
+    <script>
+        // ... existing like button script ...
+    </script>
 
 </body>
 </html>
