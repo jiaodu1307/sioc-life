@@ -111,6 +111,62 @@
             letter-spacing: 0.5px; /* Subtle letter spacing effect */
             text-decoration: none; /* Remove underline, rely on other effects */
         }
+        /* 返回顶部按钮样式 */
+        #backToTopBtn {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%; /* 圆形按钮 */
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #2980b9; /* 悬停时深色 */
+            transform: scale(1.1); /* 悬停时放大 */
+        }
+
+        /* 更精致的链接悬停效果 */
+        .section-list a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease, letter-spacing 0.3s ease, transform 0.2s ease; /* 添加 transform 过渡 */
+            display: inline-block; /* For transform to work */
+            position: relative; /* 为下划线动画准备 */
+        }
+        .section-list a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #2980b9;
+            transition: width 0.3s ease;
+            -webkit-transition: width 0.3s ease;
+        }
+        .section-list a:hover {
+            color: #2980b9; /* Darker shade on hover */
+            letter-spacing: 0.5px; /* Subtle letter spacing effect */
+            text-decoration: none; /* Remove underline, rely on other effects */
+            transform: translateY(-2px); /* 轻微上移 */
+        }
+        .section-list a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #2980b9;
+        }
+
     </style>
 </head>
 <body>
@@ -192,5 +248,55 @@
         </p>
         <p style="margin-top: 2rem; font-size: 0.8rem; color: #999;">© 2025 SIOC生活指南</p>
     </footer>
+
+    <button onclick="scrollToTop()" id="backToTopBtn" title="返回顶部">&#8679;</button>
+
+    <script>
+        // 返回顶部按钮功能
+        var backToTopBtn = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // 页面滚动时元素优雅进入视线的动画 (Intersection Observer API)
+        const cards = document.querySelectorAll('.section-card');
+        const observerOptions = {
+            root: null, // 默认视口
+            rootMargin: '0px',
+            threshold: 0.1 // 10% 可见时触发
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    // 可选: 动画执行一次后取消观察，避免重复触发
+                    // observer.unobserve(entry.target);
+                } else {
+                    // 可选: 如果希望元素移出视口后重置动画，以便再次进入时播放
+                    // entry.target.style.opacity = '0'; 
+                    // entry.target.style.transform = 'translateY(20px)';
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            // 初始化时暂停动画，等待进入视口
+            card.style.animationPlayState = 'paused'; 
+            observer.observe(card);
+        });
+
+    </script>
 </body>
 </html>
