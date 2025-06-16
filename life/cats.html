@@ -58,9 +58,39 @@
         }
         .cat-grid {
             display: grid;
-            /* 修改这里：固定为三列 */
-            grid-template-columns: repeat(3, 1fr);
+            /* 响应式布局：根据屏幕大小自动调整列数 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+        }
+        
+        /* 响应式媒体查询 */
+        @media (max-width: 768px) {
+            .cat-grid {
+                grid-template-columns: 1fr; /* 手机上单列显示 */
+                gap: 1.5rem;
+            }
+            .container {
+                padding: 10px;
+            }
+            .cat-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .cat-grid {
+                grid-template-columns: repeat(2, 1fr); /* 平板上双列显示 */
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .cat-grid {
+                grid-template-columns: repeat(3, 1fr); /* 桌面上三列显示 */
+            }
         }
         .cat-card {
             background: white;
