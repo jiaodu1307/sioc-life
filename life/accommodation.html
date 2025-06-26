@@ -147,6 +147,59 @@
             color: #666;
             margin-bottom: 1rem;
         }
+        
+        /* 响应式媒体查询 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .accommodation-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .dorm-grid {
+                grid-template-columns: 1fr; /* 手机上单列显示 */
+                gap: 1rem;
+            }
+            .image-gallery {
+                height: 200px; /* 减小图片高度 */
+                margin: 10px 0;
+            }
+            .dorm-info {
+                padding: 1rem;
+            }
+            .dorm-title {
+                font-size: 1.2rem;
+            }
+            .dorm-details {
+                font-size: 0.9rem;
+            }
+            .info-title {
+                font-size: 1rem;
+            }
+            .info-content {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            .header-content {
+                padding: 0 10px;
+            }
+            .header-content h1 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .dorm-grid {
+                grid-template-columns: repeat(2, 1fr); /* 平板上双列显示 */
+            }
+            .image-gallery {
+                height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
