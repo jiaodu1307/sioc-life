@@ -4,210 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>猫猫图鉴 - SIOC生活指南</title>
-    <style>
-        /* 复用 courses.html 或其他页面的基础样式 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f5f5f5; /* 背景色可以调整 */
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #2c3e50; /* 页眉背景色 */
-            color: white;
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .back-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        /* 猫猫卡片样式 (可以参考 accommodation.html 的 dorm-card) */
-        .cat-section {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .section-title {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        .cat-grid {
-            display: grid;
-            /* 响应式布局：根据屏幕大小自动调整列数 */
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        /* 响应式媒体查询 */
-        @media (max-width: 768px) {
-            .cat-grid {
-                grid-template-columns: 1fr; /* 手机上单列显示 */
-                gap: 1.5rem;
-            }
-            .container {
-                padding: 10px;
-            }
-            .cat-section {
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .cat-grid {
-                grid-template-columns: repeat(2, 1fr); /* 平板上双列显示 */
-            }
-        }
-        
-        @media (min-width: 1025px) {
-            .cat-grid {
-                grid-template-columns: repeat(3, 1fr); /* 桌面上三列显示 */
-            }
-        }
-        .cat-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .cat-card:hover {
-            transform: translateY(-5px);
-        }
-        .cat-image {
-            width: 100%;
-            height: 200px; /* 固定高度，或者使用 aspect-ratio */
-            background-color: #eee; /* 图片加载前的占位符颜色 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .cat-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 保持图片比例并填充 */
-        }
-        .cat-info {
-            padding: 1rem;
-        }
-        .cat-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        .cat-description {
-            font-size: 0.95rem;
-            color: #666;
-        }
-        /* 页脚样式 (如果需要) */
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        /* 页面小宠物样式 */
-        .page-pet {
-            position: fixed; /* 固定在屏幕上 */
-            bottom: 20px;    /* 距离底部 20px */
-            right: 20px;     /* 距离右侧 20px */
-            font-size: 3rem; /* 图标大小 */
-            z-index: 1000;   /* 确保在顶层 */
-            animation: sway 2s ease-in-out infinite; /* 应用摇摆动画 */
-            cursor: default; /* 鼠标样式 */
-        }
-
-        /* 定义摇摆动画 */
-        @keyframes sway {
-            0%, 100% {
-                transform: translateX(0) rotate(0deg);
-            }
-            50% {
-                transform: translateX(-10px) rotate(-5deg); /* 向左移动并轻微旋转 */
-            }
-        }
-
-        /* 新增：模态框 (Lightbox) 样式 */
-        .modal {
-            display: none; /* 默认隐藏 */
-            position: fixed; /* 固定定位 */
-            z-index: 1001; /* 比页面宠物更高 */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto; /* 如果图片太大则允许滚动 */
-            background-color: rgba(0,0,0,0.8); /* 半透明黑色背景 */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 80%;
-            max-height: 80%;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close-modal:hover,
-        .close-modal:focus {
-            color: #bbb;
-            text-decoration: none;
-        }
-
-        /* 让猫猫图片有点击手势 */
-        .cat-image img {
-            cursor: pointer;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 保持图片比例并填充 */
-        }
-
-    </style>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/cats.css">
 </head>
 <body>
     <header>
@@ -226,7 +24,7 @@
                 <div class="cat-card">
                     <div class="cat-image">
                         <!-- 添加 cat-thumbnail 类 -->
-                        <img src="../pic/cats/主页/希希0.jpg" alt="希希" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/希希0.jpg" alt="希希" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">希希</h3>
@@ -248,7 +46,7 @@
                 <div class="cat-card">
                     <div class="cat-image">
                          <!-- 添加 cat-thumbnail 类 -->
-                        <img src="../pic/cats/主页/菀菀0.jpg" alt="菀菀" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/菀菀0.jpg" alt="菀菀" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">菀菀</h3>
@@ -270,7 +68,7 @@
                  <div class="cat-card">
                     <div class="cat-image">
                          <!-- 添加 cat-thumbnail 类 -->
-                        <img src="../pic/cats/主页/蛋大0.jpg" alt="蛋大" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/蛋大0.jpg" alt="蛋大" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">蛋大</h3>
@@ -291,7 +89,7 @@
                 <!-- 猫猫卡片: 红鼻子 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/红鼻子0.jpg" alt="红鼻子" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/红鼻子0.jpg" alt="红鼻子" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">红鼻子</h3>
@@ -312,7 +110,7 @@
                 <!-- 猫猫卡片: 小老鼠 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/小老鼠0.jpg" alt="小老鼠" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/小老鼠0.jpg" alt="小老鼠" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">小老鼠</h3>
@@ -333,7 +131,7 @@
                 <!-- 猫猫卡片: 小白(总裁) -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/小白.jpg" alt="小白(总裁)" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/小白0.jpg" alt="小白(总裁)" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">小白(总裁)</h3>
@@ -354,7 +152,7 @@
                 <!-- 猫猫卡片: 足球猫(齐刘海) -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/足球猫.jpg" alt="足球猫(齐刘海)" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/足球猫0.jpg" alt="足球猫(齐刘海)" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">足球猫(齐刘海)</h3>
@@ -375,7 +173,7 @@
                 <!-- 猫猫卡片: 1号楼异瞳 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/1号楼异瞳0.jpg" alt="1号楼异瞳" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/1号楼异瞳0.jpg" alt="1号楼异瞳" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">1号楼异瞳</h3>
@@ -396,7 +194,7 @@
                 <!-- 猫猫卡片: 1号楼小老鼠妹妹(梨妹) -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/梨妹.jpg" alt="1号楼小老鼠妹妹(梨妹)" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/梨妹0.jpg" alt="1号楼小老鼠妹妹(梨妹)" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">1号楼小老鼠妹妹(梨妹)</h3>
@@ -417,7 +215,7 @@
                 <!-- 猫猫卡片: 3号楼小梨花 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/小狸花0.jpg" alt="3号楼小梨花" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/小狸花0.jpg" alt="3号楼小梨花" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">3号楼小梨花</h3>
@@ -438,7 +236,7 @@
                 <!-- 猫猫卡片: 3号楼留八 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/囧八0.jpg" alt="囧八" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/囧八0.jpg" alt="囧八" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">囧八</h3>
@@ -459,7 +257,7 @@
                 <!-- 猫猫卡片: 咖啡吧黄眼睛 -->
                 <div class="cat-card">
                     <div class="cat-image">
-                        <img src="../pic/cats/主页/咖啡吧黄眼睛0.jpg" alt="咖啡吧黄眼睛" class="cat-thumbnail">
+                        <img src="../assets/images/cats/主页/咖啡吧黄眼睛0.jpg" alt="咖啡吧黄眼睛" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">咖啡吧黄眼睛</h3>
@@ -481,7 +279,7 @@
                  <div class="cat-card">
                     <div class="cat-image">
                          <!-- 添加 cat-thumbnail 类 -->
-                        <img src="../pic/cats/cat_placeholder.jpg" alt="待添加" class="cat-thumbnail">
+                        <img src="../assets/images/cats/cat_placeholder.jpg" alt="待添加" class="cat-thumbnail">
                     </div>
                     <div class="cat-info">
                         <h3 class="cat-name">待添加</h3>
