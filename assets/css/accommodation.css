@@ -1,0 +1,169 @@
+.accommodation-section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dorm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.dorm-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.dorm-card:hover {
+    transform: translateY(-5px);
+}
+
+.image-gallery {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.gallery-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.gallery-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-dot.active {
+    background-color: white;
+}
+
+.no-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 20px;
+}
+
+.dorm-info {
+    padding: 1.5rem;
+}
+
+.dorm-title {
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.dorm-details {
+    margin: 0;
+    color: #666;
+}
+
+.info-section {
+    margin-top: 1rem;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.info-content {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .accommodation-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .dorm-grid {
+        grid-template-columns: 1fr; /* 手机上单列显示 */
+        gap: 1rem;
+    }
+
+    .image-gallery {
+        height: 200px; /* 减小图片高度 */
+        margin: 10px 0;
+    }
+
+    .dorm-info {
+        padding: 1rem;
+    }
+
+    .dorm-title {
+        font-size: 1.2rem;
+    }
+
+    .dorm-details {
+        font-size: 0.9rem;
+    }
+
+    .info-title {
+        font-size: 1rem;
+    }
+
+    .info-content {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dorm-grid {
+        grid-template-columns: repeat(2, 1fr); /* 平板上双列显示 */
+    }
+
+    .image-gallery {
+        height: 250px;
+    }
+}

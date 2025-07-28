@@ -4,203 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>住宿指南 - SIOC生活指南</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 0; /* Adjusted padding */
-            margin-bottom: 2rem;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px; /* Added padding */
-            max-width: 1200px; /* Ensure content aligns with main container */
-            margin: 0 auto; /* Center the header content */
-        }
-        .back-link {
-            color: white;
-            text-decoration: none;
-        }
-        .accommodation-section {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .section-title {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        .dorm-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .dorm-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .dorm-card:hover {
-            transform: translateY(-5px);
-        }
-        .image-gallery {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            margin: 20px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #f0f0f0;
-        }
-        .gallery-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .gallery-item {
-            min-width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-        }
-        .gallery-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .gallery-nav {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        .gallery-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .gallery-dot.active {
-            background-color: white;
-        }
-        .no-image-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #666;
-            font-size: 1.1em;
-            text-align: center;
-            padding: 20px;
-        }
-        .dorm-info {
-            padding: 1.5rem;
-        }
-        .dorm-title {
-            font-size: 1.4rem;
-            margin: 0 0 1rem 0;
-            color: #2c3e50;
-        }
-        .dorm-details {
-            margin: 0;
-            color: #666;
-        }
-        .info-section {
-            margin-top: 1rem;
-        }
-        .info-title {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        .info-content {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        
-        /* 响应式媒体查询 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            .accommodation-section {
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
-            .section-title {
-                font-size: 1.4rem;
-            }
-            .dorm-grid {
-                grid-template-columns: 1fr; /* 手机上单列显示 */
-                gap: 1rem;
-            }
-            .image-gallery {
-                height: 200px; /* 减小图片高度 */
-                margin: 10px 0;
-            }
-            .dorm-info {
-                padding: 1rem;
-            }
-            .dorm-title {
-                font-size: 1.2rem;
-            }
-            .dorm-details {
-                font-size: 0.9rem;
-            }
-            .info-title {
-                font-size: 1rem;
-            }
-            .info-content {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-            .header-content {
-                padding: 0 10px;
-            }
-            .header-content h1 {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .dorm-grid {
-                grid-template-columns: repeat(2, 1fr); /* 平板上双列显示 */
-            }
-            .image-gallery {
-                height: 250px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/accommodation.css">
 </head>
 <body>
     <header>
@@ -221,13 +26,13 @@
                         <div class="image-gallery">
                             <div class="gallery-container">
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/所公寓/所公寓1.jpg" alt="所公寓 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/所公寓/所公寓1.jpg" alt="所公寓 1">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/所公寓/所公寓2.jpg" alt="所公寓 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/所公寓/所公寓2.jpg" alt="所公寓 2">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/所公寓/所公寓3.jpg" alt="所公寓 3" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/所公寓/所公寓3.jpg" alt="所公寓 3">
                                 </div>
                             </div>
                             <div class="gallery-nav">
@@ -245,7 +50,7 @@
                         <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/四号楼/四号楼四人间.jpg" alt="四号楼四人间" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/四号楼/四号楼四人间.jpg" alt="四号楼四人间">
                     </div>
                 </div>
             </div>
@@ -258,16 +63,16 @@
                         <div class="image-gallery">
                             <div class="gallery-container">
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/六号楼/六号楼1.jpg" alt="六号楼宿舍 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/六号楼/六号楼1.jpg" alt="六号楼宿舍 1">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/六号楼/六号楼2.jpg" alt="六号楼宿舍 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/六号楼/六号楼2.jpg" alt="六号楼宿舍 2">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/六号楼/六号楼3.jpg" alt="六号楼宿舍 3" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/六号楼/六号楼3.jpg" alt="六号楼宿舍 3">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/六号楼/六号楼4.jpg" alt="六号楼宿舍 4" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/六号楼/六号楼4.jpg" alt="六号楼宿舍 4">
                                 </div>
                             </div>
                             <div class="gallery-nav">
@@ -292,7 +97,7 @@
                         <div class="image-gallery">
                             <div class="gallery-container">
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/肇家浜路/肇家浜路.jpg" alt="肇嘉浜路宿舍" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/肇家浜路/肇家浜路.jpg" alt="肇嘉浜路宿舍">
                                 </div>
                             </div>
                         </div>
@@ -305,10 +110,10 @@
                         <div class="image-gallery">
                             <div class="gallery-container">
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/东安路/东安路1.jpg" alt="东安路宿舍 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/东安路/东安路1.jpg" alt="东安路宿舍 1">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="../pic/宿舍/东安路/东安路2.jpg" alt="东安路宿舍 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    <img src="../assets/images/宿舍/东安路/东安路2.jpg" alt="东安路宿舍 2">
                                 </div>
                             </div>
                             <div class="gallery-nav">
@@ -325,13 +130,13 @@
                         <div class="image-gallery">
                         <div class="gallery-container">
                             <div class="gallery-item">
-                                <img src="../pic/宿舍/双峰路/双峰路2.jpg" alt="双峰路宿舍 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                <img src="../assets/images/宿舍/双峰路/双峰路2.jpg" alt="双峰路宿舍 2">
                             </div>
                             <div class="gallery-item">
-                                <img src="../pic/宿舍/双峰路/双峰路3.jpg" alt="双峰路宿舍 3" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                <img src="../assets/images/宿舍/双峰路/双峰路3.jpg" alt="双峰路宿舍 3">
                             </div>
                             <div class="gallery-item">
-                                <img src="../pic/宿舍/双峰路/双峰路4.jpg" alt="双峰路宿舍 4" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                <img src="../assets/images/宿舍/双峰路/双峰路4.jpg" alt="双峰路宿舍 4">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -355,13 +160,13 @@
             <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/所公寓/所公寓1.jpg" alt="所公寓 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/所公寓/所公寓1.jpg" alt="所公寓 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/所公寓/所公寓2.jpg" alt="所公寓 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/所公寓/所公寓2.jpg" alt="所公寓 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/所公寓/所公寓3.jpg" alt="所公寓 3" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/所公寓/所公寓3.jpg" alt="所公寓 3">
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -393,7 +198,7 @@
             <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/四号楼/四号楼四人间.jpg" alt="四号楼四人间" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/四号楼/四号楼四人间.jpg" alt="四号楼四人间">
                     </div>
                 </div>
             </div>
@@ -420,16 +225,16 @@
             <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/六号楼/六号楼1.jpg" alt="六号楼宿舍 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/六号楼/六号楼1.jpg" alt="六号楼宿舍 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/六号楼/六号楼2.jpg" alt="六号楼宿舍 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/六号楼/六号楼2.jpg" alt="六号楼宿舍 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/六号楼/六号楼3.jpg" alt="六号楼宿舍 3" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/六号楼/六号楼3.jpg" alt="六号楼宿舍 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/六号楼/六号楼4.jpg" alt="六号楼宿舍 4" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <img src="../assets/images/宿舍/六号楼/六号楼4.jpg" alt="六号楼宿舍 4">
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -463,7 +268,7 @@
             <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/肇家浜路/肇家浜路.jpg" alt="肇嘉浜路宿舍" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                <img src="../assets/images/宿舍/肇家浜路/肇家浜路.jpg" alt="肇嘉浜路宿舍">
                     </div>
                 </div>
             </div>
@@ -490,10 +295,10 @@
             <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/东安路/东安路1.jpg" alt="东安路宿舍 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                <img src="../assets/images/宿舍/东安路/东安路1.jpg" alt="东安路宿舍 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/东安路/东安路2.jpg" alt="东安路宿舍 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                <img src="../assets/images/宿舍/东安路/东安路2.jpg" alt="东安路宿舍 2">
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -524,13 +329,13 @@
             <div class="image-gallery">
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/双峰路/双峰路2.jpg" alt="双峰路宿舍 2" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                <img src="../assets/images/宿舍/双峰路/双峰路2.jpg" alt="双峰路宿舍 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/双峰路/双峰路3.jpg" alt="双峰路宿舍 3" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                <img src="../assets/images/宿舍/双峰路/双峰路3.jpg" alt="双峰路宿舍 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="../pic/宿舍/双峰路/双峰路4.jpg" alt="双峰路宿舍 4" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                <img src="../assets/images/宿舍/双峰路/双峰路4.jpg" alt="双峰路宿舍 4">
                     </div>
                 </div>
                 <div class="gallery-nav">
