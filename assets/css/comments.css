@@ -1,0 +1,180 @@
+/* Giscus评论系统自定义样式 */
+
+/* 评论区域容器 */
+.comments-section {
+    margin-top: 3rem;
+    padding: 2rem 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.comments-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #e74c3c);
+    border-radius: 15px 15px 0 0;
+}
+
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 评论标题样式 */
+.comments-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.comments-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+/* Giscus容器样式 */
+#giscus-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e8ed;
+    transition: all 0.3s ease;
+}
+
+#giscus-container:hover {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* 评论说明文字 */
+.comments-info {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.comments-info p {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.comments-info p:first-child {
+    background: rgba(52, 152, 219, 0.1);
+    color: #2980b9;
+}
+
+.comments-info p:last-child {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f39c12;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .comments-section {
+        margin-top: 2rem;
+        padding: 1.5rem 15px;
+        border-radius: 10px;
+    }
+    
+    .comments-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    #giscus-container {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .comments-info {
+        font-size: 0.85rem;
+    }
+    
+    .comments-info p {
+        display: block;
+        margin: 0.8rem auto;
+        max-width: 280px;
+    }
+}
+
+/* 深色主题适配 */
+@media (prefers-color-scheme: dark) {
+    .comments-section {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    .comments-title {
+        color: #ecf0f1;
+    }
+    
+    #giscus-container {
+        background: #34495e;
+        border-color: #4a5f7a;
+    }
+    
+    .comments-info {
+        color: #bdc3c7;
+    }
+    
+    .comments-info p {
+        background: rgba(52, 73, 94, 0.7);
+        border-color: rgba(52, 152, 219, 0.3);
+    }
+    
+    .comments-info p:first-child {
+        background: rgba(52, 152, 219, 0.2);
+        color: #5dade2;
+    }
+    
+    .comments-info p:last-child {
+        background: rgba(241, 196, 15, 0.2);
+        color: #f4d03f;
+    }
+}
+
+/* 动画效果 */
+.comments-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Giscus iframe 自定义样式 */
+.giscus-frame {
+    border-radius: 8px !important;
+}
