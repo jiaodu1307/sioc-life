@@ -1,0 +1,162 @@
+/* 餐饮卡片网格与样式 */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.food-card img { /* 默认图片样式 */
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  background: #f1f3f5;
+}
+
+/* 多图画廊样式 */
+.food-card__media {
+  position: relative;
+}
+
+.food-card__media .main-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  background: #f1f3f5;
+}
+
+.media-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-nav.nav-prev { left: 8px; }
+.media-nav.nav-next { right: 8px; }
+
+.food-card__thumbs {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+
+.food-card__thumbs img {
+  width: 56px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, outline 0.2s ease;
+}
+.food-card__thumbs img.active {
+  opacity: 1;
+  outline: 2px solid #1976d2;
+}
+
+.food-card__content {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.food-card__title {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.05rem;
+}
+
+.food-card__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 12px;
+  background: #eef2f7;
+  color: #445065;
+  border-radius: 12px;
+  padding: 2px 8px;
+}
+
+.food-card__review {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.food-card__meta {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+
+.food-card__actions {
+  margin-top: auto;
+  padding: 10px 14px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-card__link {
+  color: #1976d2;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.food-card__link:hover {
+  text-decoration: underline;
+}
+
+.food-section .section-title {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .food-card__title { font-size: 1rem; }
+  .food-card__review { font-size: 0.9rem; }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .food-card {
+    background: #1f2937;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  .food-card__title { color: #e5e7eb; }
+  .food-card__review { color: #cbd5e1; }
+  .food-card__meta { color: #9ca3af; }
+  .tag { background: #374151; color: #cbd5e1; }
+  .food-card__actions { border-top-color: #374151; }
+  .food-card__link { color: #60a5fa; }
+  .media-nav { background: rgba(255,255,255,0.18); color: #e5e7eb; }
+}
