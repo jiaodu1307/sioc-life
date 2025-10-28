@@ -1,0 +1,139 @@
+[
+  {
+    "name": "七号楼二楼食堂",
+    "category": "所内",
+    "tags": ["自选", "面食"],
+    "price": "¥18–28",
+    "distance": "所内",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "选择多但口味一般；西北面食窗口不错。",
+    "mapUrl": ""
+  },
+  {
+    "name": "七号楼三楼食堂",
+    "category": "所内",
+    "tags": ["面条", "烧腊", "麻辣烫", "砂锅"],
+    "price": "¥20–35",
+    "distance": "所内",
+    "images": [
+      "../assets/images/food/所食堂三楼面.jpg",
+      "../assets/images/food/placeholder.svg"
+    ],
+    "shortReview": "窗口丰富：次坞打面、烧腊、麻辣烫、砂锅。",
+    "mapUrl": ""
+  },
+  {
+    "name": "植生所食堂",
+    "category": "所内",
+    "tags": ["自选", "面条"],
+    "price": "¥18–28",
+    "distance": "所内",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "自选为主，另有面条窗口。",
+    "mapUrl": ""
+  },
+  {
+    "name": "七号楼一楼咖啡吧",
+    "category": "所内",
+    "tags": ["咖啡", "小卖部"],
+    "price": "¥10–30",
+    "distance": "所内",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "饮料与面包零食，位置偏隐蔽，支持刷饭卡。",
+    "mapUrl": ""
+  },
+  {
+    "name": "麦当劳（斜土路）",
+    "category": "所外",
+    "tags": ["快餐", "汉堡"],
+    "price": "¥25–45",
+    "distance": "步行10–15分钟",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "斜土路门店，快捷稳定。",
+    "mapUrl": ""
+  },
+  {
+    "name": "肯德基（东安路站台层）",
+    "category": "所外",
+    "tags": ["快餐", "炸鸡"],
+    "price": "¥25–45",
+    "distance": "地铁东安路站",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "站台层门店，交通方便。",
+    "mapUrl": ""
+  },
+  {
+    "name": "好再来",
+    "category": "所外",
+    "tags": ["家常菜", "性价比"],
+    "price": "¥25–40",
+    "distance": "步行5–8分钟",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "味道稳定，人均略高于食堂但还行。",
+    "mapUrl": ""
+  },
+  {
+    "name": "达美乐（大木桥路）",
+    "category": "所外",
+    "tags": ["披萨"],
+    "price": "¥30–60",
+    "distance": "步行10–15分钟",
+    "images": [
+      "../assets/images/food/达美乐_1.jpg",
+      "../assets/images/food/达美乐_2.jpg",
+      "../assets/images/food/placeholder.svg"
+    ],
+    "shortReview": "附近有门店，适合外卖或堂食。",
+    "mapUrl": ""
+  },
+  {
+    "name": "福建千里香馄饨面",
+    "category": "所外",
+    "tags": ["馄饨", "面食"],
+    "price": "¥9–12",
+    "distance": "步行3–5分钟",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "小馄饨性价比高，红色招牌。",
+    "mapUrl": ""
+  },
+  {
+    "name": "窄巷口生烫牛肉米线馄饨",
+    "category": "所外",
+    "tags": ["米线", "牛肉"],
+    "price": "¥20–35",
+    "distance": "附近",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "千里香附近，生烫牛肉米线。",
+    "mapUrl": ""
+  },
+  {
+    "name": "萨莉亚（正大乐城）",
+    "category": "所外",
+    "tags": ["西餐", "意式"],
+    "price": "¥30–60",
+    "distance": "正大乐城",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "连锁意餐，平价。",
+    "mapUrl": ""
+  },
+  {
+    "name": "农小锅（绿地缤纷城）",
+    "category": "所外",
+    "tags": ["小火锅"],
+    "price": "¥40–70",
+    "distance": "绿地缤纷城",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "商场内小火锅。",
+    "mapUrl": ""
+  },
+  {
+    "name": "小娃头地锅鸡（天钥桥路）",
+    "category": "所外",
+    "tags": ["地锅鸡", "特色"],
+    "price": "¥50–80",
+    "distance": "天钥桥路",
+    "image": "../assets/images/food/placeholder.svg",
+    "shortReview": "特色地锅鸡。",
+    "mapUrl": ""
+  }
+]
