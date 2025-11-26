@@ -31,7 +31,10 @@
 
   function cardHTML(item) {
     const tags = Array.isArray(item.tags) ? item.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
-    const mapLink = item.mapUrl ? `<a class="food-card__link" href="${item.mapUrl}" target="_blank" rel="noopener">🗺️ 地图</a>` : '';
+    const mapLink = item.mapUrl ? `<a class="btn btn-outline" href="${item.mapUrl}" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      地图
+    </a>` : '';
     const images = Array.isArray(item.images) && item.images.length > 0
       ? item.images
       : (item.image ? [item.image] : [PLACEHOLDER]);

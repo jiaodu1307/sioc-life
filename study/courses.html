@@ -4,238 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>专业课程资料 - SIOC生活指南</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .back-link {
-            color: white;
-            text-decoration: none;
-        }
-        .course-section {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .course-title {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        .course-content {
-            margin-bottom: 1.5rem;
-        }
-        .resource-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .resource-list li {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-        .resource-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem; /* 增大课程标题字体 */
-        }
-        .resource-description {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .download-link {
-            margin-left: 10px;
-            font-size: 0.9rem;
-            color: #007bff;
-            text-decoration: none;
-        }
-        .download-link:hover {
-            text-decoration: underline;
-        }
-        .resource-detail { /* 新增样式 */
-            font-size: 1.0rem; /* 增大字体 */
-            color: #555;
-            margin-top: 0.5rem; /* 增加上边距 */
-            margin-bottom: 0.2rem; /* 增加下边距 */
-            line-height: 1.7; /* 调整行高 */
-        }
-        .announcement {
-            background-color: #fff3cd; /* Light yellow background */
-            color: #856404; /* Dark yellow text */
-            border: 1px solid #ffeeba; /* Yellow border */
-            border-radius: 4px;
-            padding: 1rem;
-            margin-bottom: 2rem;
-            text-align: center; /* Center align text */
-            font-size: 0.95rem; /* Slightly smaller font */
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/common.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <a href="../index.html" class="back-link">← 返回首页</a>
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                返回首页
+            </a>
             <h1>专业课程资料</h1>
-            <div></div>
+            <div style="width: 80px;"></div>
         </div>
     </header>
 
     <main class="container">
-        <div class="announcement">
+        <div class="announcement fade-element">
             <p><strong>备注：</strong>PDF资料可正常下载。由于授课老师希望课件/试题不外传，部分上课课件和题目暂时无法在本网站下载，研一同学可在年级群内下载，药物所同学可添加有机所年级群下载或联系网页作者邮箱 hantaolin23@mails.ucas.ac.cn。</p>
         </div>
-        <section class="course-section">
-            <h2 class="course-title">专业必修课程</h2>
+        
+        <section class="section-card fade-element">
+            <h2 class="section-title">专业必修课程</h2>
             <div class="course-content">
                 <ul class="resource-list">
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">有机合成（A）</div>
                         <div class="resource-detail">授课老师：沈其龙、桂敬汉</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/必修/有机合成A资料.zip" class="download-link">有机合成A书籍和复习资料</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/有机合成A资料.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                书籍和复习资料
+                            </a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">物理有机化学（A）</div>
                         <div class="resource-detail">授课老师：黎占亭、左智伟、梅天胜</div>
                         <div class="resource-detail">备注：物理有机A复习资料（自救指南只有第二学期的比较靠谱，不过第一学期考试较简单）</div>
-                        <a href="../public/courses/必修/物理有机复习资料.zip" class="download-link">物理有机书籍和复习资料</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/物理有机复习资料.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                书籍和复习资料
+                            </a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">金属有机化学</div>
                         <div class="resource-detail">授课老师：麻生明、邓亮、刘国生</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/必修/金属有机自救指南.zip" class="download-link">金属有机复习资料</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/金属有机自救指南.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                金属有机复习资料
+                            </a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">有机合成（B）</div>
                         <div class="resource-detail">授课老师：彭海辉、徐鹏、赵祥波</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/必修/有机合成B.zip" class="download-link">有机合成B资料</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/有机合成B.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                有机合成B资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">物理有机化学（B）</div>
                         <div class="resource-detail">授课老师：高彦山、田佳、王晓明、梅天胜</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/必修/物理有机B年终小结-wxm.pdf" class="download-link">物理有机B年终小结</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/物理有机B年终小结-wxm.pdf" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                物理有机B年终小结
+                            </a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">有机结构分析</div>
                         <div class="resource-detail">授课老师：王昊阳、乔博</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="#" class="download-link">结构分析书籍</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="#" class="btn btn-text">结构分析书籍</a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">不对称合成</div>
                         <div class="resource-detail">授课老师：施世良</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/必修/不对称合成.zip" class="download-link">不对称合成PDF资料(自救指南等)</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/不对称合成.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                不对称合成PDF资料
+                            </a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
-                        <div class="resource-title">金属有机化学</div>
+                    <li class="resource-item">
+                        <div class="resource-title">金属有机化学 (Baidu Pan)</div>
                         <div class="resource-detail">授课老师：麻生明、邓亮、刘国生</div>
                         <div class="resource-detail">备注：提取码dyem</div>
-                        <a href="https://pan.baidu.com/s/1b9C4eUz1d4P3Czx0K3wEPg?pwd=dyem" class="download-link">金属有机化学自救指南</a>
+                        <div class="resource-actions">
+                            <a href="https://pan.baidu.com/s/1b9C4eUz1d4P3Czx0K3wEPg?pwd=dyem" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                金属有机化学自救指南
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">合成设计</div>
                         <div class="resource-detail">授课老师：马大为、俞飚</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/必修/合成设计自救指南ver1.0.2.pdf" class="download-link">合成设计自救指南</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/必修/合成设计自救指南ver1.0.2.pdf" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                合成设计自救指南
+                            </a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <section class="course-section">
-            <h2 class="course-title">专业选修课程</h2>
+        <section class="section-card fade-element">
+            <h2 class="section-title">专业选修课程</h2>
             <div class="course-content">
                 <ul class="resource-list">
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">绿色工艺与技术</div>
                         <div class="resource-detail">授课老师：汤文军</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/选修/绿色化工自救指南.rar" class="download-link">绿色化工自救指南</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/选修/绿色化工自救指南.rar" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                绿色化工自救指南
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">现代分离分析科学</div>
                         <div class="resource-detail">授课老师：康经武、郭寅龙</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="https://pan.baidu.com/s/1c-UatCHf2A-GKwkc3rwfAg?pwd=ekyd" class="download-link">现代分离分析科学资料</a>
+                        <div class="resource-actions">
+                            <a href="https://pan.baidu.com/s/1c-UatCHf2A-GKwkc3rwfAg?pwd=ekyd" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                现代分离分析科学资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">材料化学</div>
                         <div class="resource-detail">授课老师：黄晓宇、马志、房强</div>
                         <div class="resource-detail">备注：提取码knam</div>
-                        <a href="https://pan.baidu.com/s/1_wvyYXjEmKC6RdMGI749Tg?pwd=knam" class="download-link">材料化学复习资料</a>
+                        <div class="resource-actions">
+                            <a href="https://pan.baidu.com/s/1_wvyYXjEmKC6RdMGI749Tg?pwd=knam" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                材料化学复习资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">有机氟化学</div>
                         <div class="resource-detail">授课老师：张新刚、肖吉昌</div>
                         <div class="resource-detail">备注：提取码fjru</div>
-                        <a href="https://pan.baidu.com/s/1CM4pRXyfVFjGX-fuJjiM4Q?pwd=fjru" class="download-link">有机氟化学资料</a>
+                        <div class="resource-actions">
+                            <a href="https://pan.baidu.com/s/1CM4pRXyfVFjGX-fuJjiM4Q?pwd=fjru" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                有机氟化学资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">基因工程</div>
                         <div class="resource-detail">授课老师：（待定）</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="#" class="download-link">PDF资料(电子书/自救指南)</a> <a href="#" class="download-link">上课课件</a> <a href="#" class="download-link">题目</a>
+                        <div class="resource-actions">
+                            <a href="#" class="btn btn-text">PDF资料(电子书/自救指南)</a>
+                            <a href="#" class="btn btn-text">上课课件</a>
+                            <a href="#" class="btn btn-text">题目</a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">药学概论</div>
                         <div class="resource-detail">授课老师：丁克、药物所教师</div>
                         <div class="resource-detail">备注：布置的小论文需要认真完成（最好自己写），因为小论文占总成绩60-70%；最后期末考试的知识点和课上讲的一样，不难但也不简单（想要高分需要背）。</div>
-                        <a href="../public/courses/选修/药学概论复习资料.zip" class="download-link">药学概论复习资料</a>
+                        <div class="resource-actions">
+                            <a href="../public/courses/选修/药学概论复习资料.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                药学概论复习资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">有机π功能分子化学</div>
                         <div class="resource-detail">授课老师：高希珂、李维实、张卡卡</div>
                         <div class="resource-detail">备注：提取码ehi6</div>
-                        <a href="https://pan.baidu.com/s/1bLcTLbl4iq5l5atWOgaG8A?pwd=ehi6" class="download-link">有机π功能分子化学资料</a>
+                        <div class="resource-actions">
+                            <a href="https://pan.baidu.com/s/1bLcTLbl4iq5l5atWOgaG8A?pwd=ehi6" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                有机π功能分子化学资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">生物有机化学</div>
                         <div class="resource-detail">授课老师：陈以昀、潘李锋、房鹏飞、王婧、唐功利</div>
                         <div class="resource-detail">备注：提取码ubiy</div>
-                        <a href="https://pan.baidu.com/s/163Jfq0tYBzJciWewL55TbQ?pwd=ubiy" class="download-link">生物有机化学资料</a>
+                        <div class="resource-actions">
+                            <a href="https://pan.baidu.com/s/163Jfq0tYBzJciWewL55TbQ?pwd=ubiy" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                生物有机化学资料
+                            </a>
+                        </div>
                     </li>
-                    <li>
+                    <li class="resource-item">
                         <div class="resource-title">计算化学</div>
                         <div class="resource-detail">授课老师：薛小松、郑超、张雪、魏音、刘剑南</div>
                         <div class="resource-detail">备注：[待填写]</div>
-                        <a href="../public/courses/选修/GaussView6.zip" class="download-link">GaussView6软件</a> <a href="../public/courses/选修/服务器文件传输（ssh）.zip" class="download-link">服务器文件传输（ssh）</a> 
+                        <div class="resource-actions">
+                            <a href="../public/courses/选修/GaussView6.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                GaussView6软件
+                            </a>
+                            <a href="../public/courses/选修/服务器文件传输（ssh）.zip" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                服务器文件传输（ssh）
+                            </a> 
+                        </div>
                     </li>
                 </ul>
             </div>
         </section>
-
-
     </main>
+    
+    <button id="backToTopBtn" title="回到顶部">↑</button>
+
+    <script src="../assets/js/common.js"></script>
 </body>
 </html>
