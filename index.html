@@ -4,252 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIOC生活指南</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/comments.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f4f7f6; /* Slightly off-white background */
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes subtleShine {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, #2c3e50, #46637f);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .main-title {
-            font-size: 3rem; /* Slightly larger */
-            margin-bottom: 0.5rem; /* Reduced margin */
-            font-weight: 700;
-            animation: fadeIn 0.8s ease-out;
-        }
-        .subtitle {
-            font-size: 1.3rem; /* Slightly larger */
-            opacity: 0.85;
-            font-weight: 300;
-            animation: fadeIn 1s ease-out 0.2s; /* Delayed animation */
-            animation-fill-mode: backwards; /* Ensure it starts from opacity 0 */
-        }
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .section-card {
-            background: white;
-            border-radius: 12px; /* Softer corners */
-            padding: 2rem; /* More padding */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeIn 0.5s ease-out forwards; /* Add fade in animation */
-            opacity: 0; /* Start transparent for animation */
-        }
-        .section-card:hover {
-            transform: translateY(-8px) scale(1.02); /* More pronounced hover */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        /* Staggered animation for cards */
-        .content-grid > .section-card:nth-child(1) { animation-delay: 0.1s; }
-        .content-grid > .section-card:nth-child(2) { animation-delay: 0.2s; }
-        .content-grid > .section-card:nth-child(3) { animation-delay: 0.3s; }
-        /* Add more if there are more cards */
-        .section-title {
-            color: #2c3e50;
-            font-size: 1.7rem; /* Slightly larger */
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: #3498db;
-            transition: width 0.3s ease;
-        }
-        .section-card:hover .section-title::after {
-            width: 80px;
-        }
-        .section-content {
-            color: #666;
-        }
-        .section-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .section-list li {
-            margin-bottom: 0.5rem;
-        }
-        .section-list a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease, letter-spacing 0.3s ease;
-            display: inline-block; /* For transform to work */
-        }
-        .section-list a:hover {
-            color: #2980b9; /* Darker shade on hover */
-            letter-spacing: 0.5px; /* Subtle letter spacing effect */
-            text-decoration: none; /* Remove underline, rely on other effects */
-        }
-        /* 返回顶部按钮样式 */
-        #backToTopBtn {
-            display: none; /* 默认隐藏 */
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: #3498db;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 50%; /* 圆形按钮 */
-            font-size: 18px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        #backToTopBtn:hover {
-            background-color: #2980b9; /* 悬停时深色 */
-            transform: scale(1.1); /* 悬停时放大 */
-        }
-
-        /* 更精致的链接悬停效果 */
-        .section-list a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease, letter-spacing 0.3s ease, transform 0.2s ease; /* 添加 transform 过渡 */
-            display: inline-block; /* For transform to work */
-            position: relative; /* 为下划线动画准备 */
-        }
-        .section-list a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            display: block;
-            margin-top: 5px;
-            right: 0;
-            background: #2980b9;
-            transition: width 0.3s ease;
-            -webkit-transition: width 0.3s ease;
-        }
-        .section-list a:hover {
-            color: #2980b9; /* Darker shade on hover */
-            letter-spacing: 0.5px; /* Subtle letter spacing effect */
-            text-decoration: none; /* Remove underline, rely on other effects */
-            transform: translateY(-2px); /* 轻微上移 */
-        }
-        .section-list a:hover::after {
-            width: 100%;
-            left: 0;
-            background: #2980b9;
-        }
-
-    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1 class="main-title">SIOC生活指南</h1>
-            <p class="subtitle">为上海有机所研究生提供的不全面的学习和生活指南（学习资料板块暂只有课程资料）</p>
+        <div class="header-content">
+            <h1>SIOC生活指南</h1>
+            <!-- Optional: Add navigation links here if needed -->
+            <nav></nav>
         </div>
     </header>
 
     <main class="container">
-        <div class="content-grid">
-            <div class="section-card">
-                <h2 class="section-title">学习资料</h2>
-                <div class="section-content">
-                    <p>包含专业课程等学习资源</p>
-                    <ul class="section-list">
-                        <li><a href="./study/courses.html">专业课程资料</a></li>
-                        <li><a href="#">待添加板块</a></li>
-                        <li><a href="#">待添加板块</a></li>
-                        <li><a href="#">待添加板块</a></li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Hero Section -->
+        <section class="hero-section fade-element">
+            <div class="hero-bg"></div>
+            <h1 class="hero-title">SIOC生活指南</h1>
+            <p class="hero-subtitle">为上海有机所研究生提供的不全面的学习和生活指南<br>（包含课程资料、生活攻略、猫猫图鉴等）</p>
+        </section>
 
-            <div class="section-card">
-                <h2 class="section-title">生活信息</h2>
-                <div class="section-content">
-                    <p>涵盖衣食住行等日常生活信息</p>
-                    <ul class="section-list">
-                        <li><a href="./life/entertainment.html">休闲运动</a></li>
-                        <li><a href="./life/accommodation.html">住宿指南</a></li>
-                        <li><a href="./life/food.html">餐饮攻略</a></li>
-                        <li><a href="./life/transportation.html">交通出行</a></li>
-                        <li><a href="./life/cats.html">猫猫图鉴</a></li> <!-- 新增链接 -->
-                    </ul>
+        <!-- Nav Grid -->
+        <section class="nav-grid fade-element">
+            <a href="study/courses.html" class="nav-card">
+                <div class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 </div>
-            </div>
-            <div class="section-card">
-                <h2 class="section-title">相关链接</h2>
-                <div class="section-content">
-                    <p>常用网站和微信公众号</p>
-                    <ul class="section-list">
-                        <li><a href="http://www.sioc.cas.cn/" target="_blank">上海有机所官网</a></li>
-                        <li><a href="https://sioc.cas.cn/yjsb/" target="_blank">有机所研究生部</a></li>
-                        <li><a href="https://mail.cstnet.cn/" target="_blank">中国科学院邮件系统</a></li>
-                        <li><a href="http://eip.sioc.ac.cn/wps/portal/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIj8nKt8jNTrMoLivV88tMz8_QLsh0VAZSk7Xs!/" target="_blank">SIOC信息门户（采购/波谱）需SIOC网络</a></li>
-                    </ul>
+                <h3>学习资料</h3>
+                <p>课程ppt、自救指南</p>
+            </a>
+            
+            <a href="life/food.html" class="nav-card">
+                <div class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
                 </div>
+                <h3>餐饮攻略</h3>
+                <p>周边美食推荐、食堂指南</p>
+            </a>
+
+            <a href="life/accommodation.html" class="nav-card">
+                <div class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <h3>宿舍指南</h3>
+                <p>宿舍信息、宿舍照片</p>
+            </a>
+
+            <a href="life/transportation.html" class="nav-card">
+                <div class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <h3>交通出行</h3>
+                <p>地铁公交线路、周边出行</p>
+            </a>
+
+            <a href="life/entertainment.html" class="nav-card">
+                <div class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                </div>
+                <h3>休闲娱乐</h3>
+                <p>运动场馆、周末去处、团建推荐</p>
+            </a>
+
+            <a href="life/cats.html" class="nav-card">
+                <div class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3.1-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.67.26 6.43 2.26.64-.17 1.33-.26 2-.26z"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle><path d="M8 17h8"></path></svg>
+                </div>
+                <h3>猫猫图鉴</h3>
+                <p>所内流浪猫咪档案与领养信息</p>
+            </a>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links fade-element">
+            <h2 class="section-title">常用链接</h2>
+            <div class="links-grid">
+                <a href="http://www.sioc.cas.cn/" target="_blank" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    上海有机所官网
+                </a>
+                <a href="https://sioc.cas.cn/yjsb/" target="_blank" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    有机所研究生部
+                </a>
+                <a href="https://mail.cstnet.cn/" target="_blank" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    中科院邮件系统
+                </a>
+                <a href="http://eip.sioc.ac.cn/wps/portal/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIj8nKt8jNTrMoLivV88tMz8_QLsh0VAZSk7Xs!/" target="_blank" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    SIOC信息门户（需内网）
+                </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="container" style="text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #ddd;">
-        <div class="qr-code-section">
-            <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.4rem;">欢迎关注</h3>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 2rem;">
-                <div>
-                                        <img src="assets/images/contact/sioc-yjsh.jpg" alt="研究生会微信公众号二维码" style="width: 150px; height: 150px; display: block; margin: 0 auto 0.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <script>document.currentScript.previousElementSibling.onmouseover = function() { this.style.transform = 'scale(1.05)'; }; document.currentScript.previousElementSibling.onmouseout = function() { this.style.transform = 'scale(1)'; };</script>
-                    <p style="font-size: 0.9rem; color: #666;">研究生会微信公众号</p>
-                </div>
-                <!-- 如果有其他二维码可以放在这里 -->
-                <div>
-                                        <img src="assets/images/contact/xhs2.png" alt="小红书二维码" style="width: 150px; height: 150px; display: block; margin: 0 auto 0.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <script>document.currentScript.previousElementSibling.onmouseover = function() { this.style.transform = 'scale(1.05)'; }; document.currentScript.previousElementSibling.onmouseout = function() { this.style.transform = 'scale(1)'; };</script>
-                    <p style="font-size: 0.9rem; color: #666;">作者小红书账号</p>
-                </div>
-                <div>
-                                        <img src="assets/images/contact/二手群二维码.jpg" alt="上海有机所二手闲置交易群二维码" style="width: 150px; height: 150px; display: block; margin: 0 auto 0.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <script>document.currentScript.previousElementSibling.onmouseover = function() { this.style.transform = 'scale(1.05)'; }; document.currentScript.previousElementSibling.onmouseout = function() { this.style.transform = 'scale(1)'; };</script>
-                    <p style="font-size: 0.9rem; color: #666;">上海有机所二手闲置交易群</p>
-                </div>
+    <footer class="container">
+        <div class="qr-section fade-element">
+            <div class="qr-item">
+                <img src="assets/images/contact/sioc-yjsh.jpg" alt="研究生会微信公众号二维码" class="qr-img">
+                <p class="qr-desc">研究生会微信公众号</p>
+            </div>
+            <div class="qr-item">
+                <img src="assets/images/contact/xhs2.png" alt="小红书二维码" class="qr-img">
+                <p class="qr-desc">作者小红书账号</p>
+            </div>
+            <div class="qr-item">
+                <img src="assets/images/contact/二手群二维码.jpg" alt="上海有机所二手闲置交易群二维码" class="qr-img">
+                <p class="qr-desc">二手闲置交易群</p>
             </div>
         </div>
-        <p style="margin-top: 1.5rem; font-size: 1rem; font-weight: bold; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
-            本网站受限于本人经验，在不同板块都不可避免可能出现错误；此外，如有内容补充或其他想法，也很欢迎联系我的邮箱/小红书进行反馈，邮箱为:hantaolin23@mails.ucas.ac.cn。<br>
-            （后续计划可能会增加内容以扩大指南适用范围:增加针对保研/考研/考博同学的内容）
-        </p>
+
+        <div class="footer-content fade-element">
+            <p>
+                本网站受限于本人经验，在不同板块都不可避免可能出现错误；此外，如有内容补充或其他想法，也很欢迎联系我的邮箱/小红书进行反馈，邮箱为:hantaolin23@mails.ucas.ac.cn。<br>
+                （后续计划可能会增加内容以扩大指南适用范围:增加针对保研/考研/考博同学的内容）
+            </p>
+        </div>
         
-        <!-- 位于页脚中的评论区域 -->
-        <section class="comments-section" style="margin-top: 3rem;">
+        <!-- Giscus Comments -->
+        <section class="comments-section fade-element" style="margin-top: 3rem;">
             <div class="comments-container">
                 <h3 class="comments-title">💬 评论与讨论</h3>
                 <div id="giscus-container">
@@ -271,7 +146,6 @@
                 </div>
                 <div class="comments-info">
                     <p>💡 评论功能基于GitHub Discussions，需要GitHub账号登录</p>
-                    <p>欢迎分享你的经验、提出建议或报告问题！</p>
                 </div>
             </div>
         </section>
@@ -279,54 +153,7 @@
         <p style="margin-top: 2rem; font-size: 0.8rem; color: #999;">© 2025 SIOC生活指南</p>
     </footer>
 
-    <button onclick="scrollToTop()" id="backToTopBtn" title="返回顶部">&#8679;</button>
-
-    <script>
-        // 返回顶部按钮功能
-        var backToTopBtn = document.getElementById("backToTopBtn");
-
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        }
-
-        function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // 页面滚动时元素优雅进入视线的动画 (Intersection Observer API)
-        const cards = document.querySelectorAll('.section-card');
-        const observerOptions = {
-            root: null, // 默认视口
-            rootMargin: '0px',
-            threshold: 0.1 // 10% 可见时触发
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    // 可选: 动画执行一次后取消观察，避免重复触发
-                    // observer.unobserve(entry.target);
-                } else {
-                    // 可选: 如果希望元素移出视口后重置动画，以便再次进入时播放
-                    // entry.target.style.opacity = '0'; 
-                    // entry.target.style.transform = 'translateY(20px)';
-                }
-            });
-        }, observerOptions);
-
-        cards.forEach(card => {
-            // 初始化时暂停动画，等待进入视口
-            card.style.animationPlayState = 'paused'; 
-            observer.observe(card);
-        });
-
-    </script>
+    <button id="backToTopBtn" title="回到顶部">↑</button>
+    <script src="assets/js/common.js"></script>
 </body>
 </html>

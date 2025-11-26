@@ -4,123 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>餐饮攻略 - SIOC生活指南</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/comments.css">
     <link rel="stylesheet" href="../assets/css/food.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px; /* Added padding */
-            max-width: 1200px; /* Ensure content aligns with main container */
-            margin: 0 auto; /* Center the header content */
-        }
-        .back-link {
-            color: white;
-            text-decoration: none;
-        }
-        .food-section {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .food-section p {
-            font-size: 1rem;
-            color: #333;
-            margin-bottom: 0.8rem;
-        }
-        .section-title {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        .tips {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <a href="../index.html" class="back-link">← 返回首页</a>
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                返回首页
+            </a>
             <h1>餐饮攻略</h1>
-            <div></div>
+            <div style="width: 80px;"></div> <!-- Spacer for balance -->
         </div>
     </header>
 
     <main class="container">
-        <div class="tips">
+        <div class="tips fade-element">
             <strong>温馨提示：</strong>本攻略定期更新，欢迎同学们补充和分享更多美食信息。
         </div>
 
-        <section class="food-section" id="internal-food">
+        <section class="food-section fade-element" id="internal-food">
             <h2 class="section-title">所内就餐</h2>
-            <p style="font-size: 1.05rem;">有机所内有三个食堂，分别为七号楼二楼，七号楼三楼，植生所。以上食堂均可刷有机所饭卡（若没带饭卡也可以使用有机所饭卡的一卡通微信小程序，刷饭卡的机子有扫二维码）。</p>
+            <p style="font-size: 1.05rem; color: var(--text-light); margin-bottom: 1.5rem;">有机所内有三个食堂，分别为七号楼二楼，七号楼三楼，植生所。以上食堂均可刷有机所饭卡（若没带饭卡也可以使用有机所饭卡的一卡通微信小程序，刷饭卡的机子有扫二维码）。</p>
             <div class="food-grid"></div>
         </section>
 
-        <section class="food-section" id="external-food">
+        <section class="food-section fade-element" id="external-food">
             <h2 class="section-title">所外吃饭</h2>
             <div class="food-grid"></div>
         </section>
 
-
+        <!-- 评论与讨论区域 -->
+        <section class="comments-section fade-element">
+            <div class="comments-container">
+                <h3 class="comments-title">💬 评论与讨论</h3>
+                <div id="giscus-container">
+                    <script src="https://giscus.app/client.js"
+                            data-repo="jiaodu1307/sioc-life"
+                            data-repo-id="R_kgDOOV7PfQ"
+                            data-category="General"
+                            data-category-id="DIC_kwDOOV7Pfc4CxHjU"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="bottom"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            crossorigin="anonymous"
+                            async>
+                    </script>
+                </div>
+                <div class="comments-info">
+                    <p>🍜 推荐好吃的餐厅、分享用餐体验或补充餐饮信息</p>
+                    <p>💡 需要GitHub账号登录才能评论</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- 评论与讨论区域 -->
+    <button id="backToTopBtn" title="回到顶部">↑</button>
     <script src="../assets/js/food.js"></script>
-    <section class="comments-section container">
-        <div class="comments-container">
-            <h3 class="comments-title">💬 评论与讨论</h3>
-            <div id="giscus-container">
-                <script src="https://giscus.app/client.js"
-                        data-repo="jiaodu1307/sioc-life"
-                        data-repo-id="R_kgDOOV7PfQ"
-                        data-category="General"
-                        data-category-id="DIC_kwDOOV7Pfc4CxHjU"
-                        data-mapping="pathname"
-                        data-strict="0"
-                        data-reactions-enabled="1"
-                        data-emit-metadata="0"
-                        data-input-position="bottom"
-                        data-theme="preferred_color_scheme"
-                        data-lang="zh-CN"
-                        crossorigin="anonymous"
-                        async>
-                </script>
-            </div>
-            <div class="comments-info">
-                <p>🍜 推荐好吃的餐厅、分享用餐体验或补充餐饮信息</p>
-                <p>💡 需要GitHub账号登录才能评论</p>
-            </div>
-        </div>
-    </section>
-
+    <script src="../assets/js/common.js"></script>
 </body>
 </html>
